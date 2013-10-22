@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/jcuervo/!svn/ver/3/josecuervo/protected/data
+END
+schema.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jcuervo/!svn/ver/3/josecuervo/protected/data/schema.mysql.sql
+END
+testdrive.db
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/jcuervo/!svn/ver/3/josecuervo/protected/data/testdrive.db
+END
+schema.sqlite.sql
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/jcuervo/!svn/ver/3/josecuervo/protected/data/schema.sqlite.sql
+END

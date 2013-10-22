@@ -1,0 +1,62 @@
+// color settings
+
+$fondo: #ebc101
+$texto: #030303
+$primario: #980d2e
+
+$spacer: 10px
+
+$fx-duration: 0.1s
+
++font-face("aldosemibold", font-files("aldo_pc-webfont.ttf", "aldo_pc-webfont.eot", "aldo_pc-webfont.woff", "aldo_pc-webfont.svg"))
+
+	
+
+@mixin aldo
+	font-family: 'aldosemibold'
+
+@mixin sans
+	font-family: Helvetica, Arial, sans-serif
+
+@mixin fx
+	//+transition(color $fx-duration, background-color $fx-duration, opacity $fx-duration, -webkit-filter $fx-duration, text-indent $fx-duration)
+	+transition(all $fx-duration)
+
+
+
+@mixin btn-amarillo
+	+background-image(linear-gradient(#fff301, #fff301 50%, #ffdd00 51%, #ffdd00))
+	+box-shadow(rgba(black,0.3) 0px 2px 3px)
+	+border-radius(3px)
+
+
+@mixin remove-focus
+	outline: none
+
+@mixin out
+	outline: 1px dotted black
+
+@mixin imgr
+	text-indent: 100%
+	white-space: nowrap
+	overflow: hidden
+
+
+
+a:link, a:hover, a:active, a:visited
+	text-decoration: none
+
+h1,h2,h3,h4,h5,h6
+	
+
+h1
+	font-size: 3em
+
+h2
+	font-size: 2em
+
+button, button[type="button"], input[type="button"]
+	border: 0
+	font-family: inherit
+	font-size: inherit
+	margin: inherit

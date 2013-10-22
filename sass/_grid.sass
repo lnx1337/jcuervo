@@ -1,0 +1,85 @@
+// 960.gs port
+
+@mixin cf
+	clear: both
+
+	&:after, &:before
+		content: ''
+		display: table
+
+	&:after
+		clear: both
+
+%container
+	margin: 0 auto
+	width: 780px
+	+cf
+	//outline: 1px dotted red
+
+%grid-settings
+	display: inline
+	float: left
+	margin-left: 5px
+	margin-right: 5px
+	//outline: 1px dotted red
+
+
+%g1
+	@extend %grid-settings
+	width: 55px
+
+%g2
+	@extend %grid-settings
+	width: 120px
+
+%g3
+	@extend %grid-settings
+	width: 185px
+
+%g4
+	@extend %grid-settings
+	width: 250px
+
+%g5
+	@extend %grid-settings
+	width: 315px
+
+%g6
+	@extend %grid-settings
+	width: 380px
+
+%g7
+	@extend %grid-settings
+	width: 445px
+
+%g8
+	@extend %grid-settings
+	width: 510px
+
+%g9
+	@extend %grid-settings
+	width: 575px
+
+%g10
+	@extend %grid-settings
+	width: 640px
+
+%g11
+	@extend %grid-settings
+	width: 705px
+
+%g12
+	@extend %grid-settings
+	width: 770px
+
+
+
+%alpha
+	margin-left: 0
+
+%omega
+	margin-right: 0
+
+%alphaomega
+	margin-left: 0
+	margin-right: 0

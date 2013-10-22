@@ -1,0 +1,48 @@
+2013/04/03 00:33:48 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Applications/XAMPP/xamppfiles/htdocs/jcuervo/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Applications/X...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CAssetManager.php(235): CAssetManager->getBasePath()
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(463): CAssetManager->publish('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(500): CClientScript->getCoreScriptUrl()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(316): CClientScript->getPackageBaseUrl('jquery')
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CClientScript.php(209): CClientScript->renderCoreScripts()
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(352): CClientScript->render('<!DOCTYPE html>...')
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(789): CController->processOutput('<!DOCTYPE html>...')
+#8 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AppController.php(97): CController->render('login', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(50): AppController->actionLogin()
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#19 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('app/login')
+#20 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/jcuervo/
+---
+2013/04/03 00:43:03 [error] [exception.CException] exception 'CException' with message 'Property "UsuariosHasTblComics.imagen" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('imagen')
+#1 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/models/Amigos.php(112): CActiveRecord->__get('imagen')
+#2 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/protected/controllers/AppController.php(237): Amigos->getAmigosComics()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/actions/CInlineAction.php(50): AppController->actionAmigos()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(283): CController->run('Amigos')
+#13 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('app/Amigos')
+#14 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/XAMPP/xamppfiles/htdocs/jcuervo/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/jcuervo/index.php/app/Amigos
+---

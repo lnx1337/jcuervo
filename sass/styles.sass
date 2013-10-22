@@ -1,0 +1,1086 @@
+@import compass/css3
+@import compass/typography
+@import compass/reset
+@import grid
+@import init
+@import font-awesome
+
+@import "spr/*.png"
+@include all-spr-sprites
+
+$experimental-support-for-svg: true
+
+
+// mixins
+@mixin genericTitle
+	font-size: 2em
+
+@mixin tab
+	padding: 15px 0 15px 0
+	text-align: center
+	display: block
+	color: $primario
+	+btn-amarillo
+
+
+	&:hover
+		color: $primario
+
+	&:active
+		+box-shadow(rgba(black,0.6) 0px 2px 3px inset)
+
+
+@mixin selectedTab
+	color: white
+	+background-image(linear-gradient(black, black 50%, #252525 51%, #252525))
+	background-color: white
+	outline: none
+
+	&:hover
+		color: white
+
+
+
+body
+	font-family: Helvetica
+	font-size: 16px
+	background-color: $fondo
+	height: 784px
+
+	border: 8px solid $primario
+
+	//background: url('img/noise-yellow.png')
+	+background-image(radial-gradient(300px 300px, #fef200 0px, #efca00 800px))
+	+aldo
+	text-transform: uppercase
+
+	input[type="text"], input[type="password"]
+		+fx
+		background-color: transparent
+		border: 1px solid $primario
+		padding: 6px
+		vertical-align: bottom
+		font-size: 1.2em
+		margin: 0
+		+aldo
+
+		&:focus
+			+remove-focus
+
+
+
+//icons
+i
+	font-size: 14px
+
+
+#personajeCanvas, #comicCanvas
+	+cf
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQYV2O8O4HLh4EIwAhSqFzwbQshtaMK8YYQ0cEDAASpJc5/1r+xAAAAAElFTkSuQmCC')
+	margin-bottom: 10px
+
+#personajeCanvas
+	outline: 1px dotted $primario
+
+
+
+
+#crearPersonaje
+	@extend %container
+	outline: 5px solid $primario
+	h1
+		
+		text-align: center
+
+	h2
+		@extend %g12
+		text-align: center
+	
+
+	.controllers
+		@extend %g12
+		text-align: center
+		margin-bottom: $spacer
+
+
+%globosIconsSettings
+	display: inline-block
+	margin: 0 auto
+	width: 13px
+	height: 13px
+
+.globo1
+	@extend %globosIconsSettings
+	+spr-sprite('globo1')
+
+.globo2
+	@extend %globosIconsSettings
+	+spr-sprite('globo2')
+
+.globo3
+	@extend %globosIconsSettings
+	+spr-sprite('globo3')
+
+#insertText
+
+	input
+		margin: 0 $spacer 0 0
+
+
+	a:nth-of-type(n+2)
+		margin-left: 10px
+
+
+
+.item
+	
+	@extend %g2
+	height: 124px
+	margin-bottom: 10px
+	text-align: center
+	img
+		max-width: 124px
+		max-height: 124px
+
+
+@mixin btn
+
+	padding: 10px
+	position: relative
+	color: $fondo
+	+background-image(linear-gradient(#870a28, #870a28 50%, $primario 51%, $primario))
+	text-align: center
+	display: inline-block
+	//margin-right: 10px
+	+box-shadow(rgba(black,0.5) 0px 1px 1px)
+	+border-radius(3px)
+	cursor: pointer
+	
+
+	&:hover
+		+fx
+		color: white
+
+		>div
+			color: $fondo
+			visibility: visible
+			opacity: 1
+
+			
+
+
+	&:active
+		+box-shadow(rgba(black,0.6) 0px 2px 3px inset)
+
+	// tooltip
+	>div
+		+fx
+		position: absolute
+		bottom: -35px
+		left: 0
+		+background-image(linear-gradient(black, black 50%, #252525 51%, #252525))
+		z-index: 100
+		padding: 3px
+		text-align: center
+		width: 110px
+		font-size: 0.85em
+		visibility: hidden
+		opacity: 0
+		
+
+		// arrow
+		&::after
+			content: ''
+			position: absolute
+			border-style: solid
+			border-width: 13px 12px 0 12px
+			left: 0
+			top: -13px
+			border-color: transparent transparent transparent $texto
+			z-index: 101
+
+	.tooltipGlobo
+		width: 50px
+		height: 40px
+		bottom: -70px
+
+	.globo-normal
+		+spr-sprite('globo-normal')
+
+	.globo-exclamacion
+		+spr-sprite('globo-exclamacion')
+
+	.globo-pensamiento
+		+spr-sprite('globo-pensamiento')
+
+
+
+.btn
+	+btn
+
+
+
+
+#splash
+	@extend %container
+	margin-top: $spacer*5
+	text-align: center
+
+	h1
+		
+		margin-bottom: 1.5em
+		color: $primario
+
+		span
+			color: $texto
+			font-size: 3em
+
+	a.btn
+		font-size: 3em
+		margin-bottom: 1.5em
+
+	>div
+		margin: 0 auto
+		width: 750px
+		+cf
+
+		.itemThumbnail
+			width: 23.5%
+
+
+#nofan
+	margin-top: 3em
+	div
+		font-size: 3em
+		width: 700px
+		margin: 0 auto
+		text-align: center
+		margin-bottom: $spacer*3
+		img
+			vertical-align: middle
+
+
+	div:nth-of-type(1)
+		color: $primario
+
+
+	div:nth-of-type(2)
+		font-size: 2em
+
+	div:nth-of-type(3)
+		color: $primario
+		span
+			color: black
+			display: block
+			font-size: 2.5em
+
+
+	div:nth-of-type(4)
+		img
+			width: 100%
+
+
+
+#container
+	@extend %container
+	margin-top: $spacer*5
+	margin-bottom: $spacer
+
+
+
+#panelPersonaje
+	@extend %g4
+
+	h1
+		+genericTitle
+		+text-shadow(rgba(white,0.5) 0px -1px 0)
+		color: $primario
+		font-size: 1.5em
+		margin-bottom: $spacer*2.3
+		text-align: center
+
+
+#memeGeneratorLogo
+	text-align: center
+	margin-bottom: $spacer*2
+	span
+		display: block
+
+	span:nth-of-type(1)
+		color: $primario
+		font-size: 1.2em
+
+	span:nth-of-type(2)
+		color: $texto
+		font-size: 3.5em
+
+
+%menuPersonajeSettings
+	display: block
+	margin: 0 auto
+	width: 76px
+	height: 76px
+
+
+.menuPersonaje
+	li:nth-of-type(1)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cabeza-on')
+
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cabeza')
+
+	li:nth-of-type(2)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cuerpo-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('cuerpo')
+
+
+	li:nth-of-type(3)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('ojos-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('ojos')
+
+	li:nth-of-type(4)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('boca-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('boca')
+
+	li:nth-of-type(5)
+		a
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('accesorios-on')
+		a.selected
+			span
+				@extend %menuPersonajeSettings
+				+spr-sprite('accesorios')
+
+
+#actions
+	text-align: center
+	
+
+	a
+		margin-right: 5px
+
+	a:last-of-type
+		margin-right: 0
+
+
+	.saveBtn
+		+cf
+		margin-top: $spacer*2
+
+		a
+			float: left
+			width: 40%
+			display: block
+
+		a:first-of-type
+			margin-right: 10px
+
+
+
+
+
+#camAction
+	margin-bottom: $spacer
+	a
+		display: block
+
+
+#panelContent
+	@extend %g8
+
+	h2
+		@extend %g5
+		@extend %alpha
+		+cf
+		+genericTitle
+		margin-bottom: $spacer
+		+text-shadow(rgba(black,0.5) 0px -1px 0)
+		color: white
+
+	// cápsula roja
+	>div
+		padding: 10px
+		background: $primario
+		
+	
+		// btn crear nuevo
+		>a:nth-of-type(1)
+			+tab
+			display: block
+			+cf
+			font-size: 2em
+			margin-bottom: $spacer*3
+
+		
+#panelTitulo
+	+cf
+	div#memeGeneratorLogo
+		float: left
+		width: 50%
+	div.tituloCrear
+		float: right
+		width: 50%
+
+
+.tituloCrear
+	color: $primario
+	text-align: center
+	margin-bottom: $spacer*2
+	font-size: 4em
+	float: right
+	margin-top: $spacer
+
+
+#panelContentComic
+	@extend %g4
+
+
+
+
+	
+
+.logoComic
+	margin-top: 40px !important
+
+
+
+#panelComic
+	@extend %g8
+
+	h1
+		+genericTitle
+		margin-bottom: $spacer
+		+text-shadow(rgba(white,0.5) 0px -1px 0)
+
+	// personaje
+	>div:nth-of-type(1)
+		
+		margin-bottom: $spacer
+		img
+			width: 100%
+
+	.saveBtn
+		+cf
+		margin-top: $spacer*2
+
+		a
+			float: left
+			width: 45%
+			display: block
+
+		a:first-of-type
+			margin-right: 10px
+
+
+
+.memeThumbs
+	+cf
+	// checar si sí o sí no
+	//min-height: 426px
+	// normal, sin incepton de engine de slides
+	background: #fef200
+	//padding: 5px
+	>div:nth-of-type(4n+1)
+		@extend %alpha
+
+	>div:nth-of-type(4n+4)
+		@extend %omega
+
+
+.noSlide
+	padding: 5px
+
+.itemThumbs
+	+cf
+	>div:nth-of-type(3n+1)
+		@extend %alpha
+
+	>div:nth-of-type(3n+3)
+		@extend %omega
+
+.comicThumbs
+	+cf
+	//min-height: 426px
+	padding: 5px
+	// normal, sin incepton de engine de slides
+	>div:nth-of-type(2n+1)
+		@extend %alpha
+
+	>div:nth-of-type(2n+2)
+		@extend %omega
+
+.itemMeme
+	@extend %g2
+
+	width: 112px
+	+fx
+	position: relative
+	margin-bottom: 10px
+	min-height: 93px
+	text-align: center
+	>a
+
+	img
+		max-height: 112px
+		max-width: 112px
+		vertical-align: bottom
+	&:hover
+		+box-shadow(rgba(black,0.2) 0px 2px 10px)
+		cursor: pointer
+
+	// fb avatar
+	div
+		position: absolute
+		top: 5px
+		left: 5px
+		
+		a
+			display: block
+
+			img
+				+fx
+				display: block
+				width: 35px
+				height: 35px
+				+border-radius(40px)
+				+box-shadow(rgba(black,0.2) 0px 2px 3px)
+
+		&:hover
+			img
+				+border-radius(0px)
+
+
+#tab5 .itemMeme
+	height: 112px
+	display: table
+
+	img
+		display: table-cell
+		vertical-align: middle
+
+.itemThumbnail
+	@extend %g2
+	width: 31.94%
+	position: relative
+	margin-bottom: 10px
+	text-align: center
+
+	&:hover
+		+box-shadow(rgba(black,0.2) 0px 2px 10px)
+		cursor: pointer
+
+
+	&:hover >div
+		div
+			img
+				opacity: 1
+				visibility: visible
+
+
+	// capsula
+	>div
+		//border: 5px solid black
+
+		img
+			width: 100%
+			vertical-align: bottom
+
+		// fb avatar
+		div
+			position: absolute
+			top: 10px
+			left: 10px
+			
+			a
+				display: block
+				
+
+				img
+					+fx
+					display: block
+					width: 35px
+					height: 35px
+					+border-radius(40px)
+					+box-shadow(rgba(black,0.2) 0px 2px 3px)
+					opacity: 0
+					visibility: none
+
+			&:hover
+				img
+					+border-radius(0px)
+					
+
+
+
+a.itemAction
+	
+	width: 100%
+	min-height: 93px
+	display: block
+	text-align: center
+	color: black
+	+btn-amarillo
+
+	i
+		display: block
+		font-size: 3em
+		padding: 5px 0 5px 0
+
+	&:hover
+		color: $primario
+
+
+.bx-controls-direction
+	text-align: right	
+	a
+		+btn
+
+	a:last-of-type
+		margin-left: 10px
+
+
+
+
+
+.tabs
+	+cf
+	margin-bottom: $spacer
+	>a
+		+tab
+		@extend %g2
+		width: 31.95%
+
+	>a:first-of-type
+		@extend %alpha
+
+	>a:last-of-type
+		@extend %omega
+
+
+.itemSelector
+	// el controlador de tabs
+	+cf
+	>ul
+		+cf
+		margin-bottom: $spacer
+
+		>li
+			display: block
+			float: left
+			width: 18.36%
+			margin-right: 10px
+
+			a
+				+tab
+
+			a.selected
+				+selectedTab
+
+
+		>li:last-of-type
+			margin-right: 0
+
+	>ul.comicItemSelector
+		>li
+			width: 30.58%
+
+
+
+a.selectedTab
+	+selectedTab
+	
+
+
+
+#noFriends, #noMemes
+	+cf
+	text-align: center
+	background: #fef200
+	width: 100%
+	margin: 0 auto
+	
+	h3
+		padding: 30px 0 30px 0
+		font-size: 10em
+	p		
+		display: block
+		font-size: 1.3em
+		margin-bottom: $spacer*3
+
+	a
+		margin-bottom: $spacer*3
+	
+
+
+
+
+#detalle
+	@extend %container
+	margin-top: $spacer
+
+	
+
+
+
+#comentarios
+	@extend %g5
+	margin-left: 35px
+	
+	div
+		margin-bottom: $spacer
+		img
+			margin-right: $spacer/2
+		span
+			font-size: 2em
+			color: $fondo
+
+	h2
+		font-size: 1em
+		color: $fondo
+
+	form
+		margin-bottom: $spacer*2
+
+		textarea
+			background: white
+			display: block
+			font-family: inherit
+			font-size: inherit
+			height: 50px
+			margin: 0
+			padding: $spacer/2
+			width: 96%
+			margin-bottom: $spacer
+			resize: none
+			+remove-focus
+
+		button
+			display: block
+			margin-left: auto
+
+
+	article
+		margin-bottom: $spacer*3
+		+cf
+		h3
+			color: $fondo
+
+			&:after
+				content: ':'
+		p
+			//+sans
+			//font-size: 0.75em
+			text-transform: none
+			float: left
+			width: 280px
+
+		a.btn
+			float: right
+
+#pic
+	@extend %g6
+	margin-top: $spacer*8
+
+	// contenedor de la pic
+	div:nth-of-type(1)
+		//+background-image(radial-gradient(300px 300px, #fef200 0px, #efca00 500px))
+		margin-bottom: $spacer*2
+		img
+			width: 100%
+			vertical-align: bottom
+			+border-radius(3px)
+
+
+	// controles de la pic
+	div:nth-of-type(2)
+		float: right
+
+		span
+			padding: 8px
+			text-align: center
+			border: 1px solid $fondo
+			color: $fondo
+
+		a
+			margin-left: $spacer/2
+
+
+
+.lb
+	background: none
+	color: white
+	border: none
+	height: auto !important
+
+	// cerrar
+	>a:nth-of-type(1)
+		margin-bottom: $spacer*2
+
+
+.js-slides
+	+cf
+	position: relative
+
+	.slides_container
+		height: 375px
+		
+
+		.slide
+			margin-bottom: $spacer
+			width: 480px
+			height: 366px
+			background: #fef200
+			padding: 5px
+
+
+			>div.itemMeme:nth-of-type(4n+1)
+				@extend %alpha
+
+			>div.itemMeme:nth-of-type(4n+4)
+				@extend %omega
+
+	>a
+		+btn
+		margin-top: $spacer
+		position: absolute
+		bottom: -60px
+		cursor: pointer
+
+
+	>a:first-of-type
+		right: 30px
+
+	>a:last-of-type
+		right: -10px
+
+
+
+.js-slides-comic
+	position: relative
+
+	.slides_container
+		
+
+		.slide
+			margin-bottom: $spacer
+			width: 250px
+			height: 380px
+
+			>div.itemMeme:nth-of-type(2n+1)
+				@extend %alpha
+
+			>div.itemMeme:nth-of-type(2n+2)
+				@extend %omega
+
+	>a
+		+btn
+		margin-top: $spacer
+		position: absolute
+
+
+	>a:first-of-type
+		right: 35px
+
+	>a:last-of-type
+		right: 0
+	
+
+
+// no sé si debería hacer ésto
+
+.rounded
+	background: $texto
+	+border-radius(500px)
+	height: 112px
+	position: relative
+
+	img
+		position: absolute
+		left: 50%
+		margin-left: -48px
+		top: 50px
+
+
+
+.inputClose
+	opacity: 0
+	visibility: none
+	width: 0
+
+.inputOpen
+	opacity: 1
+	visibility: visible
+	width: 320px
+
+
+
+// todo el bussine de la cámara
+#cam
+	width: 420px
+	margin: 0 auto
+	text-align: center
+
+#camaradiv
+
+
+#camControls
+	margin-top: $spacer
+
+	a
+		padding-top: $spacer
+		display: block
+
+#upload_results
+	text-align: center
+
+	p
+		font-size: 0.9em
+		color: $fondo
+		margin-bottom: $spacer
+
+	img
+		display: block
+		margin: 0 auto
+		margin-bottom: $spacer
+
+
+
+#wraper, #wraper-ie8
+	margin: 10px auto
+	text-align: center
+	width: 100%
+
+#overlay, #overlay-ie8
+	background-color: black
+	opacity: 0.5
+	background: rgba(0,0,0,0.5)
+	bottom: 0
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	z-index: 100
+
+#popup, #popup-ie8
+	background: none repeat scroll 0 0 $fondo
+	border: 10px solid $primario
+	left: 50%
+	margin-left: -100px
+	padding: 50px
+	position: fixed
+	text-align: center
+	top: 30%
+	width: 100px
+	z-index: 200
+	font-size: 1.2em
+	color: $texto
+
+	p
+		margin-top: $spacer
+
+
+
+#overlay-ie8
+	display: none
+	background-color: black
+	opacity: 1
+
+#popup-ie8
+	padding: 100px
+	margin-left: -250px
+	width: 300px
+	top: 10%
+	font-family: Arial, Helvetica, sans-serif
+
+
+.tos
+	text-align: center
+	position: fixed
+	bottom: 10px
+	left: 50%
+	margin-left: -75px
+
+	a
+		color: $texto
+		
+
+		margin-left: 10px
+		&:hover
+			color: $primario
+
+
+
+.jcrop-holder
+	margin: 0 auto
+	margin-bottom: $spacer
+
+
+
+// login
+
+
+
+.admin-login
+	display: block
+	width: 265px
+	margin: 0 auto
+	margin-top: 200px
+	padding: 50px
+	border: 5px solid $primario
+	+box-shadow(rgba(black,0.5) 0px 2px 10px)
+
+	h1
+		text-align: center
+		margin-bottom: $spacer
+		font-size: 2em
+
+	label
+		width: 60px
+		display: inline-block
+		text-align: right
+		margin-right: 15px
+
+
+	input[type="submit"]
+		font-family: inherit
+		font-size: inherit
+		border: 0
+		padding: 0
+		+btn
+		display: block
+		margin: 0 auto
+		margin-top: $spacer
+
+	div
+		margin-bottom: $spacer
+
+
+
+
+
+
+
