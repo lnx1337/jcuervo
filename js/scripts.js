@@ -45,7 +45,7 @@ checkVersion();
       
       $.ajax({
           type: "GET",
-          url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+          url: window.protocol+"168.62.38.168/jcuervo/index.php/App/"+url,
           success: function(data){
             $("#container").html(data);
           }
@@ -57,7 +57,7 @@ checkVersion();
   $('.mismemesmenu').live("click",function(){   
    $.ajax({
           type: "GET",
-          url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/mismemes",
+          url: window.protocol+"168.62.38.168/jcuervo/index.php/App/mismemes",
           success: function(data){
             $("#container").html(data);
           }
@@ -72,7 +72,7 @@ checkVersion();
       var url=$(this).attr("id");
       $.ajax({
             type: "GET",
-            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/App/"+url,
+            url: window.protocol+"168.62.38.168/jcuervo/index.php/App/"+url,
             success: function(data){
                $(".subcat").removeClass('selectedTab');
                $(".response").html(data);
@@ -87,7 +87,7 @@ checkVersion();
         $.ajax({
             type: "POST",
             data:"UsuariosHasTblComics[tbl_comics_id]="+comicid,
-            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosHasTblComics/UpdateViews",
+            url: window.protocol+"168.62.38.168/jcuervo/index.php/UsuariosHasTblComics/UpdateViews",
             success: function(data){
             
             }
@@ -104,7 +104,7 @@ checkVersion();
           $.ajax({
             type: "POST",
             data:"UsuariosComicsComentarios[tbl_comics_id]="+comicid+"&UsuariosComicsComentarios[comment]="+comentario,
-            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/create",
+            url: window.protocol+"168.62.38.168/jcuervo/index.php/UsuariosComicsComentarios/create",
             success: function(data){
                $("#comics").html(data);
                $('#com').val('');
@@ -121,7 +121,7 @@ checkVersion();
           var comicid=$(this).attr('id');
           $.ajax({
             type: "POST",
-            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/Comics/delete/"+comicid,
+            url: window.protocol+"168.62.38.168/jcuervo/index.php/Comics/delete/"+comicid,
             success: function(data){
                $("#panelContent",window.parent.document).html(data);
                parent.$.fancybox.close();
@@ -137,7 +137,7 @@ checkVersion();
           var comenid=$(this).attr('id');
           $.ajax({
             type: "POST",
-            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
+            url: window.protocol+"168.62.38.168/jcuervo/index.php/UsuariosComicsComentarios/delete/"+comenid,
             success: function(data){
                  $('#comentario'+comenid).remove();
             }
@@ -152,15 +152,15 @@ $(".share").live('click',function(){
     $.ajax({
       type: "POST",
       data:"id="+comicid,
-      url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/comics/share/"+comicid,
+      url: window.protocol+"168.62.38.168/jcuervo/index.php/comics/share/"+comicid,
       success: function(data){
         $('#NoCompartido').html(data);
       }
     });
     var obj = {
       method: 'feed',
-      redirect_uri: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
-      link: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php",
+      redirect_uri: window.protocol+"168.62.38.168/jcuervo/index.php",
+      link: window.protocol+"168.62.38.168/jcuervo/index.php",
       picture: window.protocol+"apps.t2omedia.com.mx/"+img,
       name: 'Especial Meme Generator',
       caption: 'Crea tu meme',
@@ -209,7 +209,7 @@ $('#spic').live('click',function(){
       $.ajax({
             type: "POST",
             data:"x="+parseInt(x)+"&y="+parseInt(y)+"&w="+parseInt(w)+"&h="+parseInt(h),
-            url: window.protocol+"apps.t2omedia.com.mx/php2/jcuervo/index.php/CaraWeb/Edit",
+            url: window.protocol+"168.62.38.168/jcuervo/index.php/CaraWeb/Edit",
             success: function(data){
               parent.tmp="/tmp/";
               parent.insertarPieza('cara_web',data,parent.confCaraWeb);

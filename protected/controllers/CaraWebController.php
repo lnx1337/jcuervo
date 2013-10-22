@@ -91,11 +91,11 @@ class CaraWebController extends Controller
 
                  }
     		      
-    		     echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$filename;
+    		     echo 'http://168.62.38.168/jcuervo/AvatarCaras/tmp/'.$filename;
 
             } */
     		
-    		echo 'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.$filename;
+    		echo 'http://168.62.38.168/jcuervo/AvatarCaras/tmp/'.$filename;
 
     		if (!$result) {
                  print "ERROR: Failed to write data to $filename, check permissions\n";
@@ -126,7 +126,7 @@ class CaraWebController extends Controller
 	            imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],$targ_w,$targ_h,$_POST['w'],$_POST['h']);
 	            if(imagejpeg($dst_r,$src,$jpeg_quality)){
 	              
-	               echo 'https://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
+	               echo 'https://168.62.38.168/jcuervo/AvatarCaras/tmp/'.Yii::app()->session['usuario_id']."1337.jpg";
 	            }
 	        }        		    
 	        else {
@@ -201,7 +201,7 @@ class CaraWebController extends Controller
 	public function actionIndex()
 	{
 		
-      $this->renderPartial('index', array('url'=>'http://apps.t2omedia.com.mx/php2/jcuervo/AvatarCaras/5165ddf9a459d.jpg'));
+      $this->renderPartial('index', array('url'=>'http://168.62.38.168/jcuervo/AvatarCaras/5165ddf9a459d.jpg'));
 	}
 
 	/**

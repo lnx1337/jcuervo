@@ -90,7 +90,7 @@ class ComicsController extends Controller
                  $modelRelComics->tbl_usuarios_id=Yii::app()->session['usuario_id'];
                  $modelRelComics->tbl_comics_id=$model->id;
                  if($modelRelComics->save()){
-                    $this->ShareComic($my_access_token,'https://apps.t2omedia.com.mx/php2/jcuervo/Comics/'.$filename,'¿Qué te parece mi Meme? Lo hice en el Especial Meme Generator:  http://www.facebook.com/JCEspecial/app_342733185828640');
+                    $this->ShareComic($my_access_token,'https://168.62.38.168/jcuervo/Comics/'.$filename,'¿Qué te parece mi Meme? Lo hice en el Especial Meme Generator:  http://www.facebook.com/JCEspecial/app_342733185828640');
 	       	 		$user = Usuarios::model()->findByPk(Yii::app()->session['usuario_id']);
 	       	 		echo CController::CreateUrl("App/Profile",array("id"=>$user->id_facebook));
 	       	 		Yii::app()->end();
